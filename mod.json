@@ -1,17 +1,61 @@
+
 {
-	"geode": "$GEODE_VERSION",
-	"gd": {
-		"win": "2.2081",
-		"android": "2.2081",
-		"mac": "2.2081",
-		"ios": "2.2081"
-	},
-	"id": "$MOD_ID",
-	"name": "$MOD_NAME",
-	"version": "$MOD_VERSION",
-	"developer": "$MOD_DEVELOPER",
-	"description": "$MOD_DESCRIPTION",
-	"dependencies": {
-		"geode.node-ids": ">=v1.23.3"
-	}
+  "geode": "5.11.2",
+  "gd": {
+    "win": "2.2081",
+    "android": "2.2081",
+    "mac": "2.2081",
+    "ios": "2.2081"
+  },
+  "id": "ZelricGMD.framefix",
+  "name": "FrameFix",
+  "version": "v0.1.0",
+  "developer": "ZelricGMD",
+  "description": "Practice tool: corrects early clicks and releases using a hidden trajectory predictor.",
+  "tags": ["utility", "enhancement"],
+  "settings": {
+    "enabled": {
+      "type": "bool",
+      "name": "Enabled",
+      "default": true
+    },
+    "practice-only": {
+      "type": "bool",
+      "name": "Practice Mode Only",
+      "description": "Only correct inputs while in practice mode. Strongly recommended.",
+      "default": true
+    },
+    "click-max-frames": {
+      "type": "int",
+      "name": "Max Early Click (frames)",
+      "description": "How many frames early a click can be and still get delayed into a success. 0 = off.",
+      "default": 3,
+      "min": 0,
+      "max": 10,
+      "control": { "slider": true, "input": true }
+    },
+    "release-max-frames": {
+      "type": "int",
+      "name": "Max Early Release (frames)",
+      "description": "How many frames early a release can be and still get extended. 0 = off.",
+      "default": 3,
+      "min": 0,
+      "max": 10,
+      "control": { "slider": true, "input": true }
+    },
+    "random-mode": {
+      "type": "bool",
+      "name": "Random Mode",
+      "description": "Only some inputs get corrected, so you can't rely on it.",
+      "default": false
+    },
+    "random-chance": {
+      "type": "int",
+      "name": "Random Correction Chance (%)",
+      "default": 50,
+      "min": 0,
+      "max": 100,
+      "control": { "slider": true, "input": true }
+    }
+  }
 }
